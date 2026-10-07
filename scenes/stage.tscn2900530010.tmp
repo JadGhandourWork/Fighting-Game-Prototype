@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ccl18vdvmikkl"]
+
+[ext_resource type="PackedScene" uid="uid://dm0xpbdk6ccgl" path="res://scenes/player.tscn" id="1_8rem4"]
+[ext_resource type="Texture2D" uid="uid://dkn6d2s7a2lr" path="res://assets/stages/mysty lake.png" id="2_gi7kc"]
+
+[node name="Stage" type="Node2D" unique_id=1273748904]
+
+[node name="Player" parent="." unique_id=264663874 instance=ExtResource("1_8rem4")]
+position = Vector2(0, -68.245)
+scale = Vector2(1.2, 1.2)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1600245710]
+offset = Vector2(0, -170)
+zoom = Vector2(2.5, 2.5)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=170682454]
+z_index = -1
+position = Vector2(0, -350)
+texture = ExtResource("2_gi7kc")

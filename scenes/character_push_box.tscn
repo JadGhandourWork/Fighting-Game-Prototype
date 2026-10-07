@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://fowfky5sj1oi"]
+
+[ext_resource type="PackedScene" uid="uid://c7ulr4jgffjir" path="res://scenes/push_box.tscn" id="1_jfqbw"]
+[ext_resource type="Script" uid="uid://5caldo5reqjp" path="res://scripts/character_push_box.gd" id="2_5c0jo"]
+
+[node name="CharacterPushBox" unique_id=80437473 instance=ExtResource("1_jfqbw")]
+script = ExtResource("2_5c0jo")

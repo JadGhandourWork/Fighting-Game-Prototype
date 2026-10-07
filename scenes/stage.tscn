@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ccl18vdvmikkl"]
+
+[ext_resource type="Script" uid="uid://cyekkk4r4p3lv" path="res://scripts/stage.gd" id="1_6c5u0"]
+[ext_resource type="PackedScene" uid="uid://ca248rftm2kwd" path="res://scenes/character_manager.tscn" id="1_gi7kc"]
+[ext_resource type="Texture2D" uid="uid://dkn6d2s7a2lr" path="res://assets/stages/mysty lake.png" id="2_gi7kc"]
+[ext_resource type="Script" uid="uid://btousduptj4as" path="res://scripts/push_box.gd" id="3_kewym"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_18l7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrus0"]
+size = Vector2(1000, 10000)
+
+[node name="Stage" type="Node2D" unique_id=1273748904]
+script = ExtResource("1_6c5u0")
+
+[node name="CharacterManager" parent="." unique_id=1035680289 instance=ExtResource("1_gi7kc")]
+
+[node name="Camera" type="Camera2D" parent="." unique_id=779760495]
+visible = false
+offset = Vector2(0, -120)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=170682454]
+z_index = -1
+position = Vector2(0, -350)
+texture = ExtResource("2_gi7kc")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=543043213]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1865337525]
+shape = SubResource("WorldBoundaryShape2D_18l7a")
+
+[node name="RightBoundary" type="Area2D" parent="." unique_id=466717962 groups=["RightBoundary"]]
+position = Vector2(1200, 0)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("3_kewym")
+metadata/_custom_type_script = "uid://btousduptj4as"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBoundary" unique_id=917913748]
+shape = SubResource("RectangleShape2D_rrus0")
+
+[node name="LeftBoundary" type="Area2D" parent="." unique_id=1996450607 groups=["LeftBoundary"]]
+position = Vector2(-1200, 0)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("3_kewym")
+metadata/_custom_type_script = "uid://btousduptj4as"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBoundary" unique_id=1188099019]
+shape = SubResource("RectangleShape2D_rrus0")

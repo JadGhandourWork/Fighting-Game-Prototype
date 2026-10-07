@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ccl18vdvmikkl"]
+
+[ext_resource type="PackedScene" uid="uid://dm0xpbdk6ccgl" path="res://scenes/character.tscn" id="1_8rem4"]
+[ext_resource type="Texture2D" uid="uid://dkn6d2s7a2lr" path="res://assets/stages/mysty lake.png" id="2_gi7kc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_18l7a"]
+
+[node name="Stage" type="Node2D" unique_id=1273748904]
+
+[node name="Character" parent="." unique_id=264663874 instance=ExtResource("1_8rem4")]
+position = Vector2(0, -68.245)
+scale = Vector2(1.2, 1.2)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1600245710]
+offset = Vector2(0, -170)
+zoom = Vector2(2.5, 2.5)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=170682454]
+z_index = -1
+position = Vector2(0, -350)
+texture = ExtResource("2_gi7kc")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=543043213]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1865337525]
+shape = SubResource("WorldBoundaryShape2D_18l7a")
